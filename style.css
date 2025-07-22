@@ -3,3 +3,33 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --sky-blue: #4e90e2;
+  --hover-color: #3e6bee;
+  --dark-gray-primary-text: #2c3e50;
+  --light-gray: #f5f6fa;
+  --light-gray-secondary-text: #ecf0f1;
+}
+
+body {
+  background-color: var(--light-gray);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-gray-primary-text);
+}
+
+h1 {
+  font-size: 3rem; /* 16px * 3 = 48px */
+  line-height: 1.2;
+  color: var(--dark-gray-secondary-text);
+}
+
+h3 {
+  color: var(--light-gray-secondary-text);
+}
