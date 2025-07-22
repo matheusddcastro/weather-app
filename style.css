@@ -55,7 +55,7 @@ h3 {
   background: var(--sky-blue) url('./images/cover.jpg') no-repeat center center/cover;
 }
 
-.video-container:after {
+.video-container:after { /* This is the dark overlay so that the text can be readable */
   content: ''; /* Empty content */
   position: absolute;
   top: 0;
@@ -96,5 +96,28 @@ h3 {
 
 .button:hover {
   opacity: 1;
+  transform: scale(0.95);
+}
+
+/* About Me Section */
+#about {
+  text-align: center;
+  padding: 40px;
+}
+
+#about p {
+  margin: auto;
+  max-width: 600px;
+  font-size: 1.2rem;
+  color: var(--dark-gray-primary-text);
+}
+
+.social a {
+  border: 1px solid red;
+  margin: 10px 10px;
+}
+
+.social a:hover {
+  color: var(--hover-color);
   transform: scale(0.95);
 }
