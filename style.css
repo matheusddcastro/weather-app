@@ -41,6 +41,7 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   height: 100vh;
   overflow: hidden;
 }
@@ -66,4 +67,24 @@ h3 {
 
 .content {
   z-index: 10;
+}
+
+.content h3 {
+  color: var(--light-gray-secondary-text);
+}
+
+.button {
+  display: inline-block;
+  margin-top: 18px;
+  border: 1px solid var(--light-gray);
+  border-radius: 7px;
+  padding: 10px 20px;
+  background-color: var(--dark-gray-primary-text);
+  color: var(--light-gray-secondary-text);
+  opacity: 0.8;
+}
+
+.button:hover {
+  opacity: 1;
+  transform: scale(0.95);
 }
