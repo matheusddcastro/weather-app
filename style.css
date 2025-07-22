@@ -33,3 +33,37 @@ h1 {
 h3 {
   color: var(--light-gray-secondary-text);
 }
+
+/* Video Section */
+.video {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--sky-blue) url('./images/cover.jpg') no-repeat center center/cover;
+}
+
+.video-container video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.content {
+  z-index: 10;
+}
