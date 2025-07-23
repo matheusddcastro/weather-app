@@ -66,9 +66,22 @@ form.addEventListener("submit", async (e) => {
         throw new Error(`City not found: ${city}`)
     } else if (response.ok) { // Checks if the response is successful
       addWeatherDashboard(data)
+    } else {
+      showError()
     }
+
   } catch (error) {
+    showError()
     console.log('Error:', error)
   }
 })
+
+// Error function - display error message if city not found
+function showError() { // 
+  if (cityInput.value == "") {
+    weatherResult.innerHTML = '<p class="error">Please enter a city name.</p>'
+  } else {
+    weatherResult.innerHTML = '<p class="error">City not found. Please try again.</p>'
+  }
+}
 

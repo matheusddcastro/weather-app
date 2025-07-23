@@ -210,6 +210,11 @@ h3 {
   height: 80px;
 }
 
+.error {
+  text-align: center;
+  font-size: 1.25rem;
+}
+
 /* About Me Section */
 #about {
   text-align: center;
