@@ -36,3 +36,14 @@ function addWeatherImage(condition) {
   weatherResult.appendChild(weatherImage)
 }
 
+// Fetch Weather Data
+form.addEventListener("submit", async (e) => {
+    e.preventDefault()
+
+    try {
+        const response = await fetch(apiURL + cityInput.value + `&appid=${apiKey}`)
+        const data = await response.json()
+    } catch (error) {
+        console.log('Error:', error)
+    }
+})
