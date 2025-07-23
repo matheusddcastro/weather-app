@@ -135,6 +135,11 @@ h3 {
   outline: none;
 }
 
+#city-input:focus { /* This is to make the border color change when the input field is focused */
+  border-color: var(--sky-blue);
+  box-sizing: 0 0 0 3px rgba(78, 144, 225, 0.3);
+}
+
 #get-weather {
   background-color: var(--dark-gray-primary-text);
   color: #fff;
@@ -143,6 +148,10 @@ h3 {
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
+}
+
+#get-weather:focus, #get-weather:hover {
+  background-color: var(--hover-color);
 }
 
 /* About Me Section */
