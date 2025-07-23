@@ -99,6 +99,28 @@ h3 {
   transform: scale(0.95);
 }
 
+/* Dashboard */
+.weather-app {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  max-width: 600px;
+  min-height: 600px;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.app-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
 /* About Me Section */
 #about {
   text-align: center;
