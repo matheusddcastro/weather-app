@@ -13,9 +13,9 @@ function addWeatherDashboard(info) {
     main: { temp, humidity },
     wind: { speed },
     weather,
-  } = info
+  } = info // Destructuring the info object
 
-  const { main: weatherCondition, icon } = weather[0]
+  const { main: weatherCondition, icon } = weather[0] // weather is an array, so we need to access the first element
 
   weatherResult.innerHTML = `
         <section class="weather-card">
@@ -46,21 +46,27 @@ function addWeatherImage(condition) {
     snow: "snow.png",
     thunderstorm: "thunderstorm.png",
   }
-  const fileName = map[condition]
+  const fileName = map[condition] || alert("Weather Condition not found") // If the condition is not found, alert the user
   return `./images/${fileName}`
 }
 
-// Test addWeatherImage
-// Test 1:
-const test1 = addWeatherImage("clear")
-console.log("Test 1:", test1) // Correct output: ./images/clear.png
-
-// Test 2:
-const test2 = addWeatherImage("rain")
-console.log("Test 2:", test2) // Correct output: ./images/rain.png
-
-// Test 3:
-const test3 = addWeatherImage("drizzle")
-console.log("Test 3:", test3) // Output: ./images/undefined
-
 // Fetch Weather Data
+form.addEventListener("submit", async (e) => {
+  e.preventDefault() // Prevent form from submitting and reloading the page
+  const city = cityInput.value // Get the city name from the input field
+  if (!cityValue) return // checks if the city input is empty or false. If it is, the function returns without executing the rest of the code.
+
+  try {
+    const response = await fetch(`${apiURL}&appid=${apiKey}`)
+    const data = await response.json()
+
+    if (data.cod === "404") { // Checks if the response code is 404, which means the city was not found
+        throw new Error(`City not found: ${city}`)
+    } else if (response.ok) { // Checks if the response is successful
+      addWeatherDashboard(data)
+    }
+  } catch (error) {
+    console.log('Error:', error)
+  }
+})
+
