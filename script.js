@@ -37,5 +37,17 @@ function addWeatherDashboard(info) {
 }
 
 // Add Weather Image based on Weather Condition
+function addWeatherImage(condition) {
+    const map = {
+        clear: "clear.png",
+        clouds: "clouds.png",
+        rain: "rain.png",
+        fog: "mist.png",
+        snow: "snow.png",
+        thunderstorm: "thunderstorm.png",
+    }
+    const fileName = map[condition]
+    return `./images/${fileName}`
+}
 
 // Fetch Weather Data
