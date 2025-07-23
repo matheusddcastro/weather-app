@@ -195,6 +195,16 @@ h3 {
   height: 32px;
 }
 
+.weather-card p {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.weather-card .icon {
+  width: 80px;
+  height: 80px;
+}
+
 /* About Me Section */
 #about {
   text-align: center;

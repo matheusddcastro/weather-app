@@ -15,7 +15,7 @@ function addWeatherDashboard(info) {
     weather,
   } = info // Destructuring the info object
 
-  const { main: weatherCondition } = weather[0] // weather is an array, so we need to access the first element
+  const { main: weatherCondition, icon } = weather[0] // weather is an array, so we need to access the first element
 
   const imageSrc = addWeatherImage(weatherCondition.toLowerCase()) // Convert weather condition to lowercase to match the image file names
 
