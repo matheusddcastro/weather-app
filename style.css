@@ -182,6 +182,18 @@ h3 {
   gap: 1.5rem;
 }
 
+.details-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 15px;
+}
+
+.detail-icon {
+  width: 32px;
+  height: 32px;
+}
 
 /* About Me Section */
 #about {
