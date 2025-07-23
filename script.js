@@ -20,7 +20,7 @@ function addWeatherDashboard(info) {
   const imageSrc = addWeatherImage(weatherCondition.toLowerCase()) // Convert weather condition to lowercase to match the image file names
 
   weatherResult.innerHTML = `
-        <section class="weather-card">
+        <section class="weather-card gradient-animation">
             <h2 class="city-name">${name}</h2>
             <img src="${imageSrc}" alt="${weatherCondition}" class="weather-main-icon">
             <p class"temperature">${Math.round(temp)}°C</p>

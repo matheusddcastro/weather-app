@@ -154,17 +154,22 @@ h3 {
   background-color: var(--hover-color);
 }
 
+#weather-result {
+  margin-top: 2rem;
+}
+
 /* Weather Section (Dynamic Content) */
 .weather-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--light-gray);
+  background: linear-gradient(300deg, var(--light-gray), var(--sky-blue));
   border: 1rem;
   border-radius: 1rem;
   padding: 1.5rem;
   gap: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  animation: gradient-animation 10s ease infinite;
 }
 
 .weather-main-icon {
@@ -225,4 +230,16 @@ h3 {
 .social a:hover {
   color: var(--hover-color);
   transform: scale(0.95);
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
