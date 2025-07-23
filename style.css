@@ -137,7 +137,7 @@ h3 {
 
 #city-input:focus { /* This is to make the border color change when the input field is focused */
   border-color: var(--sky-blue);
-  box-sizing: 0 0 0 3px rgba(78, 144, 225, 0.3);
+  box-shadow: 0 0 0 3px rgba(78, 144, 225, 0.3);
 }
 
 #get-weather {
