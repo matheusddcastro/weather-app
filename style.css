@@ -27,7 +27,7 @@ a {
 h1 {
   font-size: 3rem; /* 16px * 3 = 48px */
   line-height: 1.2;
-  color: var(--dark-gray-secondary-text);
+  color: var(--dark-gray-primary-text);
 }
 
 h3 {
