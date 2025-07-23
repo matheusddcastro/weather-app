@@ -12,7 +12,7 @@ function addWeatherDashboard(info) {
   const temp = info.main.temp
   const humiditi = info.main.humidity
   const windSpeed = info.wind.speed 
-  const weater = info.weather 
+  const weather = info.weather 
 
   const weatherCard = document.createElement("div")
   weatherCard.classList.add("weather-card")
@@ -21,9 +21,18 @@ function addWeatherDashboard(info) {
     <p>Temperature: ${temp}°C</p>
     <p>Humidity: ${humiditi}%</p>
     <p>Wind Speed: ${windSpeed} m/s</p>
-    <p>Weather: ${weater[0].main}</p>
+    <p>Weather: ${weather[0].main}</p>
   `
 
+  addWeatherImage(weather[0].main)
+
   weatherResult.appendChild(weatherCard)
-  
 }
+
+// Add Weather Image based on Weather Condition
+function addWeatherImage(condition) {
+  const weatherImage = document.createElement("img")
+  weatherImage.src = `./images/${condition}.png`
+  weatherResult.appendChild(weatherImage)
+}
+
