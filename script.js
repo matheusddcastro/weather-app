@@ -15,20 +15,22 @@ function addWeatherDashboard(info) {
     weather,
   } = info // Destructuring the info object
 
-  const { main: weatherCondition, icon } = weather[0] // weather is an array, so we need to access the first element
+  const { main: weatherCondition } = weather[0] // weather is an array, so we need to access the first element
+
+  const imageSrc = addWeatherImage(weatherCondition.toLowerCase()) // Convert weather condition to lowercase to match the image file names
 
   weatherResult.innerHTML = `
         <section class="weather-card">
             <h2 class="city-name">${name}</h2>
-            <img src="https://openweathermap.org/img/wn/${icon}@2x.png" class="weather-main-icon">
+            <img src="${imageSrc}" alt="${weatherCondition}" class="weather-main-icon">
             <p class"temperature">${Math.round(temp)}°C</p>
             <div class="weather-details">
                 <div class="details-item">
-                    <img src="https://openweathermap.org/img/wn/${icon}@2x.png" class="detail-icon">
+                    <img src="./images/humidity.png" class="detail-icon">
                     <span>${humidity}%</span>
                 </div>
                 <div class="details-item">
-                    <img src="https://openweathermap.org/img/wn/${icon}@2x.png" class="detail-icon">
+                    <img src="./images/wind.png" class="detail-icon">
                     <span>${speed} km/h</span>
                 </div>
             </div>
