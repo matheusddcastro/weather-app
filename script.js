@@ -8,8 +8,6 @@ const weatherResult = document.getElementById("weather-result");
 
 // Adding Weather Dashboard to the DOM
 function addWeatherDashboard() {
-    const weatherDashboard = document.createElement("div");
-    weatherDashboard.className = "weather-dashboard";
-    weatherResult.appendChild(weatherDashboard);
+    
 
 }
