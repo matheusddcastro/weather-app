@@ -21,7 +21,7 @@ function addWeatherDashboard(info) {
         <section class="weather-card">
             <h2 class="city-name">${name}</h2>
             <img src="https://openweathermap.org/img/wn/${icon}@2x.png" class="weather-main-icon">
-            <p class"temperature">${temp}°C</p>
+            <p class"temperature">${Math.round(temp)}°C</p>
             <div class="weather-details">
                 <div class="details-item">
                     <img src="https://openweathermap.org/img/wn/${icon}@2x.png" class="detail-icon">
@@ -29,7 +29,7 @@ function addWeatherDashboard(info) {
                 </div>
                 <div class="details-item">
                     <img src="https://openweathermap.org/img/wn/${icon}@2x.png" class="detail-icon">
-                    <span>${wind}%</span>
+                    <span>${speed} km/h</span>
                 </div>
             </div>
         </section>
@@ -54,10 +54,10 @@ function addWeatherImage(condition) {
 form.addEventListener("submit", async (e) => {
   e.preventDefault() // Prevent form from submitting and reloading the page
   const city = cityInput.value // Get the city name from the input field
-  if (!cityValue) return // checks if the city input is empty or false. If it is, the function returns without executing the rest of the code.
+  if (!city) return // checks if the city input is empty or false. If it is, the function returns without executing the rest of the code.
 
   try {
-    const response = await fetch(`${apiURL}&appid=${apiKey}`)
+    const response = await fetch(`${apiURL}${encodeURIComponent(city)}&appid=${apiKey}`)
     const data = await response.json()
 
     if (data.cod === "404") { // Checks if the response code is 404, which means the city was not found
